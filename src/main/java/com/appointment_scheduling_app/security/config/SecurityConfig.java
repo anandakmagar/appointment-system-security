@@ -42,7 +42,7 @@ public class SecurityConfig {
 //                        .anyRequest().authenticated()
 //                )
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/security-ms-59cfc31741b3.herokuapp.com/auth/**").permitAll()
+                        .requestMatchers("http://security/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
