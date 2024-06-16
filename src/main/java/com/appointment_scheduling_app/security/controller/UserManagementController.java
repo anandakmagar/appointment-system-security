@@ -16,7 +16,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://127.0.0.1:5502")
+//@CrossOrigin(origins = "http://127.0.0.1:5502")
+@CrossOrigin(origins = "https://appointment-app-frontend-086470168ae5.herokuapp.com")
 @RequestMapping("/auth")
 public class UserManagementController {
 
