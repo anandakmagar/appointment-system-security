@@ -34,7 +34,7 @@ public class SecurityConfig {
                         .requestMatchers("/auth/login**", "/auth/register","/auth/delete**", "/auth/send-reset-code**","/auth/change-password**","/public/**").permitAll()
                         .requestMatchers("/auth/admin/**").hasAnyAuthority("ADMIN")
                         .requestMatchers("/auth/staff/admin/**").hasAnyAuthority("ADMIN")
-                        .requestMatchers("/auth/staff/admin-staff/**").hasAnyAuthority("ADMIN", "STAFF")
+                        .requestMatchers("http://security/auth/staff/admin-staff/**").hasAnyAuthority("ADMIN", "STAFF")
                         .requestMatchers("/auth/client/admin/**").hasAnyAuthority("ADMIN")
                         .requestMatchers("/auth/client/admin-staff/**").hasAnyAuthority("ADMIN", "STAFF")
                         .requestMatchers("/auth/appointment/admin/**").hasAnyAuthority("ADMIN")
