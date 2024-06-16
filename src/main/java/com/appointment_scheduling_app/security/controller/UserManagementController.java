@@ -313,10 +313,9 @@ public class UserManagementController {
         return ResponseEntity.ok(name);
     }
 
-    @CrossOrigin(origins = "https://appointment-app-frontend-086470168ae5.herokuapp.com")
     @GetMapping("/client/admin-staff/fetchAllClients")
     public ResponseEntity<List<Object>> fetchAllClients() {
-        WebClient client = webClientBuilder.baseUrl("http://client").build();
+        WebClient client = webClientBuilder.baseUrl("http://CLIENT").build();
         String uri = "/client/fetchAllClients";
         List<Object> list = client.get()
                 .uri(uri)
