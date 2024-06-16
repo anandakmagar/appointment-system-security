@@ -202,12 +202,25 @@ public class UserManagementController {
         return ResponseEntity.ok(name);
     }
 
-    @GetMapping("/staff/admin-staff/fetchAllStaff")
-    public ResponseEntity<List<Object>> fetchAllStaff() {
+//    @GetMapping("/staff/admin-staff/fetchAllStaff")
+//    public ResponseEntity<List<Object>> fetchAllStaff() {
+//        WebClient client = webClientBuilder.baseUrl("https://staff-ms-03792ef7327d.herokuapp.com").build();
+//        String uri = "/staff/fetchAllStaff";
+//        List<Object> list = client.get()
+//                .uri(uri)
+//                .retrieve()
+//                .bodyToMono(new ParameterizedTypeReference<List<Object>>() {})
+//                .block();
+//        return ResponseEntity.ok(list);
+//    }
+
+    @GetMapping("/admin-staff/fetchAllStaff")
+    public ResponseEntity<List<Object>> fetchAllStaff(@RequestHeader("Authorization") String authorizationHeader) {
         WebClient client = webClientBuilder.baseUrl("https://staff-ms-03792ef7327d.herokuapp.com").build();
         String uri = "/staff/fetchAllStaff";
         List<Object> list = client.get()
                 .uri(uri)
+                .header("Authorization", authorizationHeader)
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<List<Object>>() {})
                 .block();
