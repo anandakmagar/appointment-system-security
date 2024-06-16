@@ -204,7 +204,7 @@ public class UserManagementController {
 
     @GetMapping("/staff/admin-staff/fetchAllStaff")
     public ResponseEntity<List<Object>> fetchAllStaff() {
-        WebClient client = webClientBuilder.baseUrl("http://staff").build();
+        WebClient client = webClientBuilder.baseUrl("https://staff-ms-03792ef7327d.herokuapp.com").build();
         String uri = "/staff/fetchAllStaff";
         List<Object> list = client.get()
                 .uri(uri)
